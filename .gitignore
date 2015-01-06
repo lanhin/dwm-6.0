@@ -1,0 +1,8 @@
+*.o
+*.out
+*~
+
+patches/
+
+dwm
+dwm.c.rej
