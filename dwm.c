@@ -285,6 +285,13 @@ static int xerrordummy(Display *dpy, XErrorEvent *ee);
 static int xerrorstart(Display *dpy, XErrorEvent *ee);
 static void zoom(const Arg *arg);
 
+//Added by lanhin
+static void myfulscr(const Arg *arg);
+static void myunfulscr(const Arg *arg);
+static void myfulscrbar(const Arg *arg);
+static void setfulscr_withbar(Client *c, Bool fullscreen);
+//Added by lanhin end
+
 /* variables */
 static Systray *systray = NULL;
 static unsigned long systrayorientation = _NET_SYSTEM_TRAY_ORIENTATION_HORZ;
@@ -2400,6 +2407,49 @@ zoom(const Arg *arg) {
 			return;
 	pop(c);
 }
+
+//Added by lanhin
+void myfulscr(const Arg *arg){
+  setfullscreen(selmon->sel, True);
+}
+
+void myunfulscr(const Arg *arg){
+  setfullscreen(selmon->sel, False);
+}
+
+void myfulscrbar(const Arg *arg){
+  setfulscr_withbar(selmon->sel, True);
+}
+
+void setfulscr_withbar(Client *c, Bool fullscreen) {
+	if(fullscreen) {
+		XChangeProperty(dpy, c->win, netatom[NetWMState], XA_ATOM, 32,
+		                PropModeReplace, (unsigned char*)&netatom[NetWMFullscreen], 1);
+		//c->isfullscreen = True;
+		c->oldstate = c->isfloating;
+		c->oldbw = c->bw;
+		//c->bw = 0;
+		c->isfloating = True;
+		//resizeclient(c, c->mon->mx, c->mon->my, c->mon->mw - c->bw, c->mon->mh);
+		resizeclient(c, c->mon->mx, c->mon->my + bh, c->mon->mw, c->mon->mh - bh);
+		XRaiseWindow(dpy, c->win);
+	}
+	else {
+		XChangeProperty(dpy, c->win, netatom[NetWMState], XA_ATOM, 32,
+		                PropModeReplace, (unsigned char*)0, 0);
+		//c->isfullscreen = False;
+		c->isfloating = c->oldstate;
+		c->bw = c->oldbw;
+		c->x = c->oldx;
+		c->y = c->oldy;
+		c->w = c->oldw;
+		c->h = c->oldh;
+		resizeclient(c, c->x, c->y, c->w, c->h);
+		arrange(c->mon);
+	}
+}
+
+//Added by lanhin end
 
 int
 main(int argc, char *argv[]) {

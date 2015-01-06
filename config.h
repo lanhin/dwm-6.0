@@ -56,7 +56,7 @@ static const char *eccmd[] = { "emacsclient", "-c", "-a", "", NULL};//emacs
 static const char *volumedown[] = { "mixer", "vol", "-1", NULL };//音量控制
 static const char *volumeup[]   = { "mixer", "vol", "+1", NULL };
 static const char *mutecmd[]    = { "mixer", "vol", "0", NULL };
-static const char *lscreen[]    = { "xdotool", "mousemove", "200", "500", "click", "1", NULL };//翻页
+static const char *lscreen[]    = { "xdotool", "mousemove", "200", "500", "click", "1", NULL };//显示屏切换，需安装 xdotool
 static const char *rscreen[]    = { "xdotool", "mousemove", "2000", "500", "click", "1", NULL };
 
 
@@ -89,12 +89,15 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
 	{ MODKEY,			XK_e,	   spawn,	   {.v = eccmd } },
+	{ MODKEY,			XK_x,	   myfulscr,	   {0} },//全屏显示当前程序
+	{ MODKEY|ShiftMask,		XK_x,	   myunfulscr,	   {0} },//非全屏
+	{ MODKEY,		        XK_u,	   myfulscrbar,	   {0} },//带topbar全屏
 	{ 0,         XF86XK_AudioLowerVolume,      spawn,          {.v = volumedown } },//音量控制
 	{ 0,         XF86XK_AudioRaiseVolume,      spawn,          {.v = volumeup } }, 
 	{ 0,                XF86XK_AudioMute,      spawn,          {.v = mutecmd } },
 	//{ 0,                  XF86XK_Forward, focusstack,          {.i = +1 } },//tag 翻页
 	//{ 0,                     XF86XK_Back, focusstack,          {.i = -1 } },
-	{ MODKEY,                    XK_Left,      spawn,          {.v = lscreen } },//不明。。
+	{ MODKEY,                    XK_Left,      spawn,          {.v = lscreen } },//显示屏切换
 	{ MODKEY,                   XK_Right,      spawn,          {.v = rscreen } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
