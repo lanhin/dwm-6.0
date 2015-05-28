@@ -84,14 +84,14 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
-	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
+	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },//显示屏切换，这个可能比 MODKEY+XK_Left/XK+Right 更好用
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
 	{ MODKEY,			XK_e,	   spawn,	   {.v = eccmd } },
 	{ MODKEY,			XK_x,	   myfulscr,	   {0} },//全屏显示当前程序
 	{ MODKEY|ShiftMask,		XK_x,	   myunfulscr,	   {0} },//非全屏
-	{ MODKEY,		        XK_u,	   myfulscrbar,	   {0} },//带topbar全屏
+	{ MODKEY,		        XK_u,	   myfulscrbar,	   {0} },//带topbar全屏，外接显示器的情况下可能会出现错误导致X11退出，情况尚不明确
 	{ 0,         XF86XK_AudioLowerVolume,      spawn,          {.v = volumedown } },//音量控制
 	{ 0,         XF86XK_AudioRaiseVolume,      spawn,          {.v = volumeup } }, 
 	{ 0,                XF86XK_AudioMute,      spawn,          {.v = mutecmd } },
