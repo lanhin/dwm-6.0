@@ -51,13 +51,14 @@ static const Layout layouts[] = {
 /* commands */
 static const char *dmenucmd[] = { "dmenu_run", "-fn", font, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
 static const char *termcmd[]  = { "uxterm", NULL };
-static const char *startchrom[]  = { "chromium-browser", NULL };
+static const char *startchrom[]  = { "chromium", NULL };
 static const char *eccmd[] = { "emacsclient", "-c", "-a", "", NULL};//emacs
 static const char *volumedown[] = { "mixer", "vol", "-1", NULL };//音量控制
 static const char *volumeup[]   = { "mixer", "vol", "+1", NULL };
 static const char *mutecmd[]    = { "mixer", "vol", "0", NULL };
 static const char *lscreen[]    = { "xdotool", "mousemove", "200", "500", "click", "1", NULL };//显示屏切换，需安装 xdotool
 static const char *rscreen[]    = { "xdotool", "mousemove", "2000", "500", "click", "1", NULL };
+static const char *lockscr[] = { "/home/linhan/lock.sh", NULL};
 
 
 #include<X11/XF86keysym.h>
@@ -109,6 +110,7 @@ static Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	//TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
+	{ MODKEY,			XK_z,	   spawn,	   {.v = lockscr } },
 };
 
 /* button definitions */
