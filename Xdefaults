@@ -1,0 +1,41 @@
+!!!!!!!!!!!!!!!!!!!!!
+!! UXTerm settings !!
+!!!!!!!!!!!!!!!!!!!!!
+UXTerm*background: #000000 
+UXTerm*foreground: white 
+UXTerm*customization: -color 
+UXTerm*toolBar: false 
+UXTerm*highlightSelection: true 
+UXTerm*VT100*underLine: on 
+UXTerm*VT100*colorMode: on 
+UXTerm*VT100*dynamicColors: on 
+UXTerm*VT100*colorAttrMode: off 
+UXTerm*VT100*colorBDMode: on 
+UXTerm*VT100*colorBD: blue 
+UXTerm*VT100*colorULMode: on 
+UXTerm*VT100*colorUL: green 
+UXTerm*VT100*titeInhibit: true 
+
+UXTerm.VT100*color0: black 
+UXTerm.VT100*color1: red3 
+UXTerm.VT100*color2: green3 
+UXTerm.VT100*color3: yellow3 
+UXTerm.VT100*color4: blue3 
+UXTerm.VT100*color5: magenta3 
+UXTerm.VT100*color6: cyan3 
+UXTerm.VT100*color7: gray90 
+UXTerm.VT100*color8: gray30 
+UXTerm.VT100*color9: red 
+UXTerm.VT100*color10: green 
+UXTerm.VT100*color11: yellow 
+UXTerm.VT100*color12: blue 
+UXTerm.VT100*color13: magenta 
+UXTerm.VT100*color14: cyan 
+UXTerm.VT100*color15: white 
+UXTerm.VT100*cursorColor: lime green
+
+! TrueType font
+!UXTerm*faceName: DejaVu Sans Mono
+UXTerm*faceName: Bitstream Vera Sans Mono
+UXTerm*faceNameDoublesize: WenQuanYi Zen Hei
+UXTerm*faceSize: 12
