@@ -58,7 +58,7 @@ static const char *volumeup[]   = { "mixer", "vol", "+1", NULL };
 static const char *mutecmd[]    = { "mixer", "vol", "0", NULL };
 static const char *lscreen[]    = { "xdotool", "mousemove", "200", "500", "click", "1", NULL };//显示屏切换，需安装 xdotool
 static const char *rscreen[]    = { "xdotool", "mousemove", "2000", "500", "click", "1", NULL };
-static const char *lockscr[] = { "/home/linhan/lock.sh", NULL};
+static const char *lockscr[] = { "lock.sh", NULL};
 
 
 #include<X11/XF86keysym.h>
@@ -108,7 +108,7 @@ static Key keys[] = {
 	TAGKEYS(                        XK_6,                      5)
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
-	//TAGKEYS(                        XK_9,                      8)
+	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 	{ MODKEY,			XK_z,	   spawn,	   {.v = lockscr } },
 };
