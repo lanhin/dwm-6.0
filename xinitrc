@@ -10,9 +10,9 @@ X_ENV="dwm"
 export OOO_FORCE_DESKTOP=gnome 
 
 # Input System 
-export LANG=zh_CN.UTF-8
-export LC_CTYPE=zh_CN.UTF-8
-#export LC_ALL="en_US.UTF-8"
+export LANG=en_US.UTF-8
+#export LC_CTYPE=zh_CN.UTF-8
+export LC_ALL="en_US.UTF-8"
 export XIM=fcitx 
 export XIM_PROGRAM=fcitx 
 export GTK_IM_MODULE=fcitx 
