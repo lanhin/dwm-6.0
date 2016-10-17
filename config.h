@@ -22,7 +22,7 @@ static const char *tags[] = { "青", "山", "遮", "不", "住", "毕", "竟", "
 static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            True,        -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 2,       True,       -1 },
+	{ "Firefox",  NULL,       NULL,       1 << 2,       False,       -1 },
 };
 
 /* layout(s) */
