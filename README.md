@@ -1,12 +1,11 @@
 # dwm - dynamic window manager
-------
 
 dwm is an extremely fast, small, and dynamic window manager for X.
 
 
 ## Requirements
 
-In order to build dwm you need the Xlib header files.
+In order to build dwm you need the ```Xlib``` header files.
 
 
 ## Installation
@@ -35,7 +34,7 @@ In order to connect dwm to a specific display, make sure that the ```DISPLAY``` 
 ```
     DISPLAY=foo.bar:1 exec dwm
 ```
-(This will start dwm on display :1 of the host foo.bar.)
+(This will start dwm on display ```:1``` of the host ```foo.bar```.)
 
 In order to display status info in the bar, you can do something like this in your ```.xinitrc```:
 
